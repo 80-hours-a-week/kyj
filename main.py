@@ -20,7 +20,7 @@ def main():
         dept = input("교수 학과: ")
         professor = Professor(pname, page, dept)
         events.append(professor.teach())
-        print(next(log_stream([professor.teach()])))
+        print(professor.teach()+'\n')
 
         # graduate_student 입력
         gsname = input("대학원생 이름: ")
@@ -29,17 +29,17 @@ def main():
         ptype = input("대학원 과정: ")
         gradsd = graduate_student(gsname,gsage,gsmajor,ptype)
         events.append(gradsd.write_thesis())
-        print(next(log_stream([gradsd.write_thesis()])))
+        print(gradsd.write_thesis()+'\n')
 
         # undergraduate_student 입력
         ugsname = input("대학생 이름: ")
         ugsage = int(input("대학생 나이: "))
         ugsmajor = input("대학생 전공: ")
-        en_st = input("현재 구분(재학/휴학): ")
+        en_st = input("현재 구분(재학/휴학/졸업): ")
         ugradsd = undergraduate_student(ugsname,ugsage,ugsmajor,en_st)
         p = input("현장실습 참여 여부(참여/불참여): ")
         events.append(ugradsd.internship(p))
-        print(next(log_stream([ugradsd.internship(p)])))
+        print(ugradsd.internship(p)+'\n')
 
         # MajorCourse 입력
         mname = input("전공 강의명: ")
@@ -48,7 +48,7 @@ def main():
         mcourse = MajorCourse(mname, mcredit, isReq)
         pre = input("선수강과목: ")
         events.append(mcourse.set_prerequisite(pre))
-        print(next(log_stream([mcourse.set_prerequisite(pre)])))
+        print(mcourse.set_prerequisite(pre)+'\n')
 
         # LiberalArtCourse 입력
         lname = input("교양 강의명: ")
@@ -57,7 +57,7 @@ def main():
         lcourse = LiberalArtCourse(lname, lcredit, cat)
         onoff = input("온/오프라인: ")
         events.append(lcourse.run(onoff))
-        print(next(log_stream([lcourse.run(onoff)])))
+        print(lcourse.run(onoff)+'\n')
 
 
     except ValueError as e:

@@ -6,4 +6,4 @@ class undergraduate_student(Student):
         self.enrollment_status = enrollment_status
     
     def internship(self, participate: str) -> str:
-        return f"{self.name}({self.major},{self.age},{self.enrollment_status}중) 학생이 현장실습에 {participate}합니다."
+        return f"{self.name}({self.major},{self.age}세,{self.enrollment_status}중) 학생이 현장실습에 {participate}합니다."

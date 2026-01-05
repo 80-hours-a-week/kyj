@@ -6,4 +6,4 @@ class LiberalArtCourse(Course):
         self.category = category
 
     def run(self, isonline: str) -> str:
-        return f"[구분: {self.category}] {self.courseName}' 강의({self.credit}학점)는 {isonline}으로 진행됩니다."
+        return f"[구분: {self.category}] '{self.courseName}' 강의({self.credit}학점)는 {isonline}으로 진행됩니다."
